@@ -1,41 +1,45 @@
 #include <iostream>
 #include <cmath>
 
-using namespace std;
-
 float a,b,c ,delta , x1,x2,real_part,imaginary_part;
 
 int main(){
-  cout<< "This program can help you to solve quadratic equation!!" << endl;
-  cout <<"Typical quadratic equation = ax^2 + bx + c = 0" << endl;
+  std::cout<< "This program can help you to solve quadratic equation!!" << std::endl;
+  std::cout <<"Typical quadratic equation = ax^2 + bx + c = 0" << std::endl;
   
   // give users to input 3 values of a , b , and c
 
-  cout << "Input value:" << endl;
-  cin >> a >> b >> c;
+  std::cout << "Input value:" << std::endl;
+  std::cin >> a >> b >> c;
+   if(std::cin.fail()){
+    std::cout << "Wrong Formatted!" << '\n' ;
+    std::cin.clear();
+    return 0;
+   }
  
  // defined delta value 
   delta = b*b - 4*a*c; 
-  cout << delta << endl;  // just a output to check 
+  std::cout << delta << std::endl;  // just a output to check 
  
   if( delta > 0){
     x1 = (-b + sqrt(delta))/(2*a);
     x2 = (-b - sqrt(delta))/(2*a);
-    cout << "There are two roots" << endl;
-    cout << "X1 = " << x1 << endl;
-    cout << "X2 = " << x2 << endl;
+    std::cout << "There are two roots" << std::endl;
+    std::cout << "X1 = " << x1 << std::endl;
+    std::cout << "X2 = " << x2 << std::endl;
+  
   } 
-  if (delta == 0){
+  else if (delta == 0){
     x1 = x2 = -b/(2*a);
-    cout << "There is only one root" << endl;
-    cout << "X1 =  "  << x1 << endl;
+    std::cout << "There is only one root" <<  std::endl;
+    std::cout << "X1 =  " << x1 << std::endl;
   }
-  if(delta < 0){
+  else if(delta < 0){
     real_part = -b/(2*a);
     imaginary_part = sqrt(abs(delta))/(2*a);
-    cout << "There are two roots in complex" << endl;
-    cout << "X1 = " << real_part << "+" << imaginary_part << "i" << endl;
-    cout << "X2 = " << real_part << "-" << imaginary_part << "i" << endl;
+    std::cout << "There are two roots in complex" << std::endl;
+    std::cout << "X1 = " << real_part << "+" << imaginary_part << "i" << std::endl;
+    std::cout << "X2 = " << real_part << "-" << imaginary_part << "i" << std::endl;
   }
    return 0;
 }
