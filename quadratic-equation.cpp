@@ -21,7 +21,7 @@ int main(){
   if( delta > 0){
     x1 = (-b + sqrt(delta))/(2*a);
     x2 = (-b - sqrt(delta))/(2*a);
-    cout << "There are two roots" << endl;
+    cout << "There are two roots" < endl;
     cout << "X1 = " << x1 << endl;
     cout << "X2 = " << x2 << endl;
   } 
