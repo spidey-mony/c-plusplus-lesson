@@ -18,12 +18,6 @@ int main(){
     double result;
     std::cout << "Input Arithmetic(+ , - , * , / )" << '\n';
     std::cin >> op;
-    if(std::cin.fail()){
-        std::cerr<<"Invalid Operators" << std::endl;
-        std::cin.ignore();
-        std::cin.clear();
-        return 0;
-    }
     std::cout << "Input Num1: " << std::endl;
     std::cin >> num1;
     std::cout<<"Input Num2: " << std::endl;
@@ -44,6 +38,9 @@ int main(){
         case '/': 
             result = division();
             std::cout << result << std::endl;
+            break;      
+        default:
+            std::cout << "Invalid Operators!" << std::endl;
             break;
     }
     return 0;
