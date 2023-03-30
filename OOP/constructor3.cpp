@@ -40,6 +40,19 @@ class product{
          cout << fixed << setprecision(2);
         cout << "Name:" << name << "," << " Qty:" << qty << "," << " Price:" << price << "$" << "," << " Amount:" << amount << "$" << endl; 
     }
+    void input(){
+        cout << "Input Name?" << endl;
+        cin.getline(name,20);
+        cout << "Input Qty?" << endl;
+        cin >> qty;
+        cout << "Input Price?" << endl;
+        cin >> price;
+        cin.sync();
+        setName(name);
+        setQty(qty);
+        setPrice(price);
+        setAmount(qty * price);
+    }
 };
 product::product(){
     cout << "This is default constructor()" << endl;
@@ -55,13 +68,20 @@ product::product(const char name[],int qty,float price){
     amount = qty * price;
 }
 int main(void){
-    product p1;  
+    // const int n=3;
+    product p1[3];  
     product p2("Anchor Beer",20,10);
     product p3[] = {{"Coca Cola",13,8},{},{"Vatanac Beer",23,13}};
-    p1.print();
+    // p1.print();
     p2.print();
     for(int i=0;i<3;++i){
         p3[i].print();
+    }
+    for(int i=0;i<3;++i){
+        p1[i].input();
+    }
+      for(int i=0;i<3;++i){
+        p1[i].print();
     }
     return 0;
 }
