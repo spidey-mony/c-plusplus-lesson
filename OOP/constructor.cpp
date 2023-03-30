@@ -75,7 +75,7 @@ int main(){
     string s2 = ss.str();
     ss.str("");
 		distance = sqrt(pow(p2[i].getx()-p1[i].getx(),2)+ pow(p2[i].gety()-p1[i].gety(),2));
-		cout << fixed <<  setprecision(2);  // use this to kat kbeas 2 ktong kroy jenh
+		// cout << fixed << setprecision(2);  // use this to kat kbeas 2 ktong kroy jenh
 		cout << left << setw(10) << s1 << setw(10) << s2 << distance << endl;
 }
 	//.......................................
