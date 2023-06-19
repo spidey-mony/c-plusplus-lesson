@@ -82,5 +82,6 @@ int main(void){
     pop(&integerStack);
     printf("Total number of items: %d\n",sizeOfStack(integerStack));
     printf("Top Item is %d\n",peekStack(integerStack));
+
     return 0;
 }

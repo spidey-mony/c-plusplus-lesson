@@ -1,0 +1,2 @@
+
+    printPoint(p2);

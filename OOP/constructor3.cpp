@@ -36,9 +36,9 @@ class product{
     float getAmount(){
         return amount;
     }
-    void print(){
-         cout << fixed << setprecision(2);
-        cout << "Name:" << name << "," << " Qty:" << qty << "," << " Price:" << price << "$" << "," << " Amount:" << amount << "$" << endl; 
+    void output(){
+        cout << left << fixed << setprecision(2);
+        cout << setw(13) << name << setw(10) << qty << "$" << setw(10) << price << "$" << setw(8) << amount << endl; 
     }
     void input(){
         cout << "Input Name?" << endl;
@@ -56,7 +56,7 @@ class product{
 };
 product::product(){
     cout << "This is default constructor()" << endl;
-    strcpy(name,"No Name");
+    strcpy(name,"N/A");
     qty=0;
     price=amount=0.0;
 }
@@ -73,15 +73,15 @@ int main(void){
     product p2("Anchor Beer",20,10);
     product p3[] = {{"Coca Cola",13,8},{},{"Vatanac Beer",23,13}};
     // p1.print();
-    p2.print();
+    p2.output();
     for(int i=0;i<3;++i){
-        p3[i].print();
+        p3[i].output();
     }
     for(int i=0;i<3;++i){
         p1[i].input();
     }
       for(int i=0;i<3;++i){
-        p1[i].print();
+        p1[i].output();
     }
     return 0;
 }

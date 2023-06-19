@@ -44,7 +44,7 @@ ElementType dequeue(StringQueue *q){
 }
 // Get total items in the queue
 int sizeOfQueue(const StringQueue q){
-    return (q.rear - q.front + 1);  
+    return (q.rear - q.front + 1);   // 1 - 0 + 1
 }
 ElementType getRearItem(const StringQueue q){
     return q.list[q.rear];
@@ -57,8 +57,10 @@ int main(void){
     StringQueue strList;
     emptyQueue(&strList);
 
-    enqueue(&strList,"Yun Mony");
-    enqueue(&strList,"Yun Ratha");
+    enqueue(&strList,"Yun Mony");  // front = 1
+    enqueue(&strList,"Yun Ratha");  // rear = 1
+    enqueue(&strList,"Yun Ratha");  // rear = 2
+
     printf("Total items before dequeue: %d\n",sizeOfQueue(strList));
 
     dequeue(&strList); // Output Yun Mony so there is only Yun Ratha in queue
