@@ -8,10 +8,10 @@ class Base{
         int pro;
     public:
         int pub;
-    void setprt(int pv){
+    void setprt(int pv){  // how to access private data members as a private specifier 
         prt=pv;
     }
-    int getprt(){
+    int getprt(){  // this too !!
         return prt;
     }
         // int getPvt(){
@@ -25,7 +25,7 @@ class Derived : private Base{
                  // base::pub
     public:
         Derived(int pv,int pr, int pu){  // constructor of Derived class which called child class. 
-           Base::setprt(pv);
+            Base::setprt(pv);
             pro=pr; // inherited data member from base class that named Base class.
             pub=pu;
         }
@@ -35,7 +35,7 @@ class Derived : private Base{
     void setpub(int pu){
         pub=pu;
     }
-    void setPrt(int pv){
+    void setPrt(int pv){  // Use Base:: (scope resolution) in case there are too many class that has the same class name
         Base::setprt(pv);
     }
     int getPrt(){
@@ -53,12 +53,13 @@ class Derived : private Base{
 int main(){
     Derived dr(2,5,10);
     cout << "pvt = " << dr.getPrt() << endl;
-    // dr.print();
-    // dr.setpro(10);
-    // dr.setpub(20);
-    // dr.print();
-    // cout << string(40,'-') << endl;
-    // dr.input();
-    // dr.print();
+    dr.print();
+    dr.setPrt(30);
+    dr.setpro(10);
+    dr.setpub(20);
+    dr.print();
+    cout << string(40,'-') << endl;
+    dr.input();
+    dr.print();
     return 0;
 }
